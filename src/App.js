@@ -1,10 +1,15 @@
-import logo from './logo.svg';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import LandingPage from './components/LandingPage/LandingPage';
+import NavBar from './components/Shared/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <h1>this is healthcare website</h1>
+      <BrowserRouter>
+        <NavBar></NavBar>
+      </BrowserRouter>
+      
     </div>
   );
 }
