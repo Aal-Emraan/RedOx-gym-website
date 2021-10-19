@@ -24,15 +24,15 @@ const LandingPage = () => {
                     <div className="carousel-item">
                     <img src={img2} className="d-block w-100" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5 className="text-4xl mb-4">Build Your Muscles Just Like You Want</h5>
+                        <p className="mb-5">Here you can do any kind of exercises. Our special instructiors welly know that how to gain you muscles within time. We have specialized muscles instructiors to train our members to a musculer body</p>
                     </div>
                     </div>
                     <div className="carousel-item">
                     <img src={img3} className="d-block w-100" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h5 className="text-4xl mb-4">Build Your Muscles Just Like You Want</h5>
+                        <p className="mb-5">Here you can do any kind of exercises. Our special instructiors welly know that how to gain you muscles within time. We have specialized muscles instructiors to train our members to a musculer body</p>
                     </div>
                     </div>
                 </div>
