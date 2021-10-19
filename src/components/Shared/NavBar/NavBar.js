@@ -4,8 +4,7 @@ import useFirebase from '../../../hooks/useFirebase';
 
 const NavBar = () => {
 
-    const {user, logOut} = useFirebase();
-    console.log(user)
+    const {user, logOut} = useFirebase()
     return (
         <nav className="shadow-sm">
             <div className='container mx-auto flex justify-between py-3'>
