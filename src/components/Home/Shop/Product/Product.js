@@ -8,9 +8,9 @@ const Product = (props) => {
         <div className="col-md-3 p-2">
             <div className="shadow">
             <img className="d-inline-block mx-auto" src={img} alt="" />
-            <h1>{title}</h1>
-            <h1 className="text-2xl">Price: {price} Taka</h1>
-            <Link to={`/product/${id}`}><button className="btn btn-secondary mb-4">Buy Now</button></Link>
+            <h1 className='text-2xl font-semibold text-secondary'>{title}</h1>
+            <h1 className="text-2xl my-2">Price: {price} Taka</h1>
+            <Link to={`/product/${id}`}><button className="btn text-white bg-red-800 mb-4">Buy Now</button></Link>
             </div>
         </div>
     );

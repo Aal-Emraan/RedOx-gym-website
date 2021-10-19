@@ -31,6 +31,7 @@ const Course = () => {
                 <div>
                     <h1 className="text-6xl my-5">{title}</h1>
                     <p className="text-2xl w-75 mx-auto mb-5">{description}</p>
+                    <p className="text-3xl font-bold text-secondary mb-4">Price: {price}$</p>
                     <Link to="/purchase"><button className="btn btn-dark">Purchase Now</button></Link>
                 </div>
             </div>
