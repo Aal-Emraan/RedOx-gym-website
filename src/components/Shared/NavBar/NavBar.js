@@ -15,10 +15,10 @@ const NavBar = () => {
                 </NavLink>
 
                 <div className="font-semibold text-xl">
-                    <NavLink to="/home" className="ml-5">Home</NavLink>
-                    <NavLink to="/plans" className="ml-5">Planes</NavLink>
-                    <NavLink to="/shop" className="ml-5">Shop</NavLink>
-                    <NavLink to="/about" className="ml-5 mr-6">About</NavLink>
+                    <NavLink to="/home" activeStyle={{fontWeight: "bold",color: "red"}} className="ml-5">Home</NavLink>
+                    <NavLink to="/plans" activeStyle={{fontWeight: "bold",color: "red"}} className="ml-5">Planes</NavLink>
+                    <NavLink to="/shop" activeStyle={{fontWeight: "bold",color: "red"}} className="ml-5">Shop</NavLink>
+                    <NavLink to="/about" activeStyle={{fontWeight: "bold",color: "red"}} className="ml-5 mr-6">About</NavLink>
                     {user?.email ?
                     <>
                     <img className="rounded-circle inline" style={{width:'36px'}} src={user.photoURL} alt="" />
