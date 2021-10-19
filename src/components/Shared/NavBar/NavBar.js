@@ -22,7 +22,8 @@ const NavBar = () => {
                     <NavLink to="/about" className="ml-5 mr-6">About</NavLink>
                     {user?.email ?
                     <>
-                    <span>{user.displayName}</span>
+                    <img className="rounded-circle inline" style={{width:'36px'}} src={user.photoURL} alt="" />
+                    <small className="font-normal ms-2">{user.displayName}</small>
                     <button className="bg-red-700 text-white rounded px-3 py-1 ml-6" onClick={logOut}>Log Out</button>
                     </>
                     :

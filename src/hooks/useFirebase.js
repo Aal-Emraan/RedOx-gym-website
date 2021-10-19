@@ -12,26 +12,12 @@ const useFirebase = () => {
 
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-        .then(result => {
-            setUser(result.user);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-        });
+        return signInWithPopup(auth, provider)
     }
 
     const githubSignIn = () => {
         const provider = new GithubAuthProvider();
-        signInWithPopup(auth, provider)
-        .then(result => {
-            setUser(result.user)
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-        });
+        return signInWithPopup(auth, provider)
     }
 
     const emailSignIn = (email, password, name) => {
@@ -52,6 +38,8 @@ const useFirebase = () => {
         onAuthStateChanged(auth, user => {
             if(user){
                 setUser(user)
+            }else{
+                setUser([])
             }
         })
     }, [])

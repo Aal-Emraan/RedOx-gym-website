@@ -1,14 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
+
 
 const Login = () => {
+
+    const {googleSignIn, githubSignIn} = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
+
+    const redirect_url = location.state?.from || '/home';
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => {
+            history.push(redirect_url)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+        
+    }
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+        .then(result => {
+            history.push(redirect_url)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+    }
 
     const handleReload = e => {
         e.preventDefault();
     }
-
-    const {googleSignIn, githubSignIn} = useFirebase();
     return (
         <div className="w-50 mx-auto shadow p-4 rounded mt-5">
             <form onSubmit={handleReload}>
@@ -18,8 +48,8 @@ const Login = () => {
                 <input type="submit" className="btn btn-danger d-block w-100 py-3 rounded-pill" value="Login" />
                 <p className="mt-4 fst-italic">New user? <Link to="/signup"> Sign Up</Link></p>
                 <p className="text-muted">-------------- or --------------</p>
-                <button className="btn btn-success" onClick={googleSignIn}>Google Sign In</button>
-                <button className="btn btn-dark ms-3" onClick={githubSignIn}>Github Sign In</button>
+                <button className="btn btn-success" onClick={handleGoogleSignIn}>Google Sign In</button>
+                <button className="btn btn-dark ms-3" onClick={handleGithubSignIn}>Github Sign In</button>
             </form>
         </div>
     );

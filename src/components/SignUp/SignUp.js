@@ -1,14 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
 import { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 
 const SignUp = () => {
-    const {emailSignIn, googleSignIn, githubSignIn} = useFirebase();
+    const {emailSignIn, googleSignIn, githubSignIn} = useAuth();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+
+    const location = useLocation();
+    const history = useHistory();
+
+    const redirect_url = location.state?.from || '/home';
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => {
+            history.push(redirect_url)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+        
+    }
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+        .then(result => {
+            history.push(redirect_url)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+    }
 
     const handleName = e => {
         setName(e.target.value);
@@ -38,8 +67,8 @@ const SignUp = () => {
                 <input type="submit" className="btn btn-danger d-block w-100 py-3 rounded-pill" value="Sign Up" onClick={emailSignIn(email, password, name)}/>
                 <p className="mt-4 fst-italic">Already have an account? <Link to="/login"> Login</Link></p>
                 <p className="text-muted">-------------- or --------------</p>
-                <button className="btn btn-success" onClick={googleSignIn}>Google Sign In</button>
-                <button className="btn btn-dark ms-3" onClick={githubSignIn}>Github Sign In</button>
+                <button className="btn btn-success" onClick={handleGoogleSignIn}>Google Sign In</button>
+                <button className="btn btn-dark ms-3" onClick={handleGithubSignIn}>Github Sign In</button>
             </form>
         </div>
     );
