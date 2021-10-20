@@ -11,6 +11,12 @@ Visit this website to know more (https://healthcare-website-70c582.netlify.app/)
 ### `Gym eqqipements to purchase online`
 ### `Awesome guideline to lead your journey`
 
+## This website is made with...
+
+### `React, React Router Dom`
+### `Firebase`
+### `CSS Library: Bootstrap and Tailwind`
+
 ### About us
 
 #### This website is about RedOx gymnesiam based on sylhet city. We help people make there body perfect to look good and build a great physic to become healthier all day long. Health is wealth. So being a happy human we must need a perfect body. And this is the place you are looking for.. Enroll to our plans to get in shape. We provide best services to help you become musculer. Stay connected with us.....
