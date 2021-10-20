@@ -5,12 +5,10 @@ import AuthProvider from './components/context/AuthProvider';
 import Home from './components/Home/Home';
 import AllShopProducts from './components/Home/Shop/AllShopProducts';
 import ProductDetails from './components/Home/Shop/ProductDetails/ProductDetails';
-import Shop from './components/Home/Shop/Shop';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import AllPlans from './components/Plans/AllPlans';
 import Course from './components/Plans/Course/Course';
-import Plans from './components/Plans/Plans';
 import Purchase from './components/Plans/Purchase/Purchase';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Footer from './components/Shared/Footer/Footer';
@@ -33,9 +31,9 @@ function App() {
             <PrivateRoute path="/plans">
               <AllPlans></AllPlans>
             </PrivateRoute>
-            <Route path="/shop">
+            <PrivateRoute path="/shop">
               <AllShopProducts></AllShopProducts>
-            </Route>
+            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>

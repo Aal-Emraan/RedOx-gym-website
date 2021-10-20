@@ -62,7 +62,7 @@ const SignUp = () => {
 
     const handleReload = e => {
         e.preventDefault();
-        error && console.log(error);
+        emailSignIn(email,password,name, history, redirect_url)
     }
 
     return (
@@ -73,7 +73,7 @@ const SignUp = () => {
                 <input type="email" placeholder="Email..." className="form-control bg-light shadow-sm p-3 mb-4 border-0" onBlur={handleEmail} />
                 <input type="password" placeholder="Password..." className="form-control bg-light shadow-sm p-3 mb-4 border-0" />
                 <input type="password" placeholder="Re-enter your password..." className="form-control bg-light shadow-sm p-3 mb-5 border-0" onBlur={handlePassword} />
-                <input type="submit" className="btn btn-danger d-block w-100 py-3 rounded-pill" value="Sign Up" onClick={emailSignIn(email,password,name)}/>
+                <input type="submit" className="btn btn-danger d-block w-100 py-3 rounded-pill" value="Sign Up"/>
                 <p className="mt-4 fst-italic">Already have an account? <Link to="/login"> Login</Link></p>
                 <p className="text-muted">-------------- or --------------</p>
                 <button className="btn btn-success" onClick={handleGoogleSignIn}>Google Sign In</button>

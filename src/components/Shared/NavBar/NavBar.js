@@ -6,7 +6,7 @@ const NavBar = () => {
 
     const {user, logOut} = useFirebase();
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light container mx-auto">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@ const NavBar = () => {
                     </div>
                     </NavLink>
 
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
                     <li className="nav-item"><NavLink to="/home" activeStyle={{fontWeight: "bold",color: "red"}} className="ml-5">Home</NavLink></li>
                     <li className="nav-item"><NavLink to="/plans" activeStyle={{fontWeight: "bold",color: "red"}} className="ml-5">Planes</NavLink></li>
                     <li className="nav-item"><NavLink to="/shop" activeStyle={{fontWeight: "bold",color: "red"}} className="ml-5">Shop</NavLink></li>
@@ -26,7 +26,7 @@ const NavBar = () => {
                     <li className="nav-item">{user?.email ?
                     <>
                     <img className="rounded-circle inline" style={{width:'36px'}} src={user.photoURL} alt="" />
-                    <small className="font-normal ms-2">{user.displayName}</small>
+                    <small className="font-normal ms-2 text-blue-900">{user.displayName}</small>
                     <button className="bg-red-700 text-white rounded px-3 py-1 ml-6" onClick={logOut}>Log Out</button>
                     </>
                     :

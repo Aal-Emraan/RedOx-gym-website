@@ -1,14 +1,12 @@
 import initializeAuthentication from "../Firebase/firebase.init"
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 
 initializeAuthentication();
 
 const useFirebase = () => {
 
     const [user, setUser] = useState([]);
-    const [error, setError] = useState('');
     const auth = getAuth();
 
     const googleSignIn = () => {
@@ -21,25 +19,43 @@ const useFirebase = () => {
         return signInWithPopup(auth, provider)
     }
 
-    const emailSignIn = (email, password, name) => {
+    const emailSignIn = (email, password, name, history, redirect_url) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
             const getUser = result.user;
             getUser.displayName = name;
             setUser(getUser);
-            console.log(getUser)
+            console.log(getUser);
+            history.push(redirect_url);
         })
         .catch((error) => {
-            setError(error.message);
+            alert(error.message);
         });
+    }
+
+    const signInWithEmailPassword = (email, password, history, redirect_url) => {
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            setUser(user)
+            // console.log("signed in");
+            // console.log(user);
+            history.push(redirect_url);
+            // ...
+          })
+          .catch((error) => {
+            alert(error.message);
+        });
+        
     }
 
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if(user){
-                setUser(user)
+                setUser(user);
             }else{
-                setUser([])
+                setUser([]);
             }
         })
     }, [])
@@ -47,20 +63,19 @@ const useFirebase = () => {
     const logOut = () =>{
         signOut(auth)
         .then(() => {
-            setUser([])
+            setUser([]);
         })
     }
 
 
     return {
         user,
-        error,
-        setError,
         setUser,
         googleSignIn,
         githubSignIn,
         emailSignIn,
-        logOut
+        logOut,
+        signInWithEmailPassword
     }
 
 }

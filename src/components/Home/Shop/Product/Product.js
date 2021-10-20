@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router';
 
 const Product = (props) => {
     const {id,title, img, price} = props.product;
