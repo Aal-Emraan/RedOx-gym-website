@@ -56,11 +56,11 @@ const Login = () => {
                 <input type="email" placeholder="Email..." className="form-control bg-light shadow-sm p-3 mb-4 border-0" onBlur={handleEmail} />
                 <input type="password" placeholder="Password..." className="form-control bg-light shadow-sm p-3 mb-5 border-0" onBlur={handlePassword} />
                 <input type="submit" className="btn btn-danger d-block w-100 py-3 rounded-pill" value="Login"/>
+            </form>
                 <p className="mt-4 fst-italic">New user? <Link to="/signup"> Sign Up</Link></p>
                 <p className="text-muted">-------------- or --------------</p>
                 <button className="btn btn-success" onClick={handleGoogleSignIn}>Google Sign In</button>
                 <button className="btn btn-dark ms-3" onClick={handleGithubSignIn}>Github Sign In</button>
-            </form>
         </div>
     );
 };

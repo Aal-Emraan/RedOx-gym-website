@@ -9,7 +9,7 @@ const Product = (props) => {
             <img className="d-inline-block mx-auto" src={img} alt="" />
             <h1 className='text-2xl font-semibold text-secondary'>{title}</h1>
             <h1 className="text-2xl my-2">Price: {price} Taka</h1>
-            <Link to={`/product/${id}`}><button className="btn text-white bg-red-800 mb-4">Buy Now</button></Link>
+            <Link to={`/product/${id}`}><button className="btn text-white bg-red-800 mb-4">See Details</button></Link>
             </div>
         </div>
     );

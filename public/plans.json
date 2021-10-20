@@ -1,11 +1,14 @@
 [
-    {"id": "1", "title": "Full Body", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/NnK6y44/plan-4.jpg"},
-    {"id": "2","title": "Lower Body", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/C61TNBD/plan-5.jpg"},
-    {"id": "3","title": "Stretching", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/nsHT8dM/plan-6.jpg"},
-    {"id": "4","title": "Six Pack", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/mcYNjKH/plan-1.jpg"},
-    {"id": "5","title": "Arm & Shoulder", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/HB4jXKz/plan-8.jpg"},
-    {"id": "6","title": "Chest", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/41x44Z4/plan-3.jpg"},
-    {"id": "7","title": "Leg", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/1vsYNp9/plan-7.jpg"},
-    {"id": "8","title": "Biceps", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/cFdkkcR/plan-9.jpg"},
-    {"id": "9","title": "Mid Body", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/hc34Rbw/plan-2.jpg"}
+    {"id": "1", "title": "Full Body", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/NnK6y44/plan-4.jpg", "trainer": "Hrithik Roshan"},
+    {"id": "2","title": "Lower Body", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/C61TNBD/plan-5.jpg", "trainer": "Vidyut Jamwal"},
+    {"id": "3","title": "Stretching", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/nsHT8dM/plan-6.jpg", "trainer": "Hrithik Roshan"},
+    {"id": "4","title": "Six Pack", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/mcYNjKH/plan-1.jpg", "trainer": "Scott"},
+    {"id": "5","title": "Arm & Shoulder", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/HB4jXKz/plan-8.jpg", "trainer": "Vidyut Jamwal"},
+    {"id": "6","title": "Chest", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/41x44Z4/plan-3.jpg", "trainer": "Scott"},
+    {"id": "7","title": "Leg", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/1vsYNp9/plan-7.jpg", "trainer": "Hrithik Roshan"},
+    {"id": "8","title": "Biceps", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/cFdkkcR/plan-9.jpg", "trainer": "Vidyut Jamwal"},
+    {"id": "9","title": "Mid Body", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/hc34Rbw/plan-2.jpg", "trainer": "Hrithik Roshan"},
+    {"id": "10","title": "Leg", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/1vsYNp9/plan-7.jpg", "trainer": "Hrithik Roshan"},
+    {"id": "11","title": "Stretching", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/nsHT8dM/plan-6.jpg", "trainer": "Vidyut Jamwal"},
+    {"id": "12","title": "Chest", "description": "This is specialized for training every part of body.A complete package for your full body.", "price": "59", "img":"https://i.ibb.co/41x44Z4/plan-3.jpg", "trainer": "Scott"}
 ]

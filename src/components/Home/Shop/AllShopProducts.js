@@ -15,8 +15,13 @@ const AllShopProducts = () => {
         <div className="my-4 container mx-auto">
             <h1 className="text-4xl mb-4">Checkout Our Latest Products</h1>
             <div className="row">
+                <h2 className="text-2xl font-semibold text-start mt-5  mb-3 italic">Eqqipements</h2>
                 {
-                    allProducts.map(product => <Product key={product.title} product={product}></Product>)
+                    allProducts.slice(4,8).map(product => <Product key={product.title} product={product}></Product>)
+                }
+                <h2 className="text-2xl font-semibold text-start mt-5 mb-3 italic">Suppliments</h2>
+                {
+                    allProducts.slice(0,4).map(product => <Product key={product.title} product={product}></Product>)
                 }
             </div>
         </div>

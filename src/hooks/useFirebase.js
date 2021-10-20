@@ -38,7 +38,8 @@ const useFirebase = () => {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            setUser(user)
+            console.log(user);
+            setUser(user);
             // console.log("signed in");
             // console.log(user);
             history.push(redirect_url);
