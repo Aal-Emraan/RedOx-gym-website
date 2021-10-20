@@ -51,9 +51,9 @@ function App() {
             <Route path="/purchase">
               <Purchase></Purchase>
             </Route>
-            <Route path="/product/:pid">
+            <PrivateRoute path="/product/:pid">
               <ProductDetails></ProductDetails>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
