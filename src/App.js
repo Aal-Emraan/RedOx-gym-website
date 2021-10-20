@@ -30,9 +30,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/plans">
+            <PrivateRoute path="/plans">
               <AllPlans></AllPlans>
-            </Route>
+            </PrivateRoute>
             <Route path="/shop">
               <AllShopProducts></AllShopProducts>
             </Route>
@@ -45,9 +45,9 @@ function App() {
             <Route path="/signup">
               <SignUp></SignUp>
             </Route>
-            <Route path="/course/:id">
+            <PrivateRoute path="/course/:id">
               <Course></Course>
-            </Route>
+            </PrivateRoute>
             <Route path="/purchase">
               <Purchase></Purchase>
             </Route>
