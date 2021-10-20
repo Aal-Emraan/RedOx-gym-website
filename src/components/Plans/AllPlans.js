@@ -16,7 +16,7 @@ const AllPlans = () => {
         <div className='row container mx-auto g-5 my-5'>
             <h1 className="text-4xl">Our Special Plans</h1>
             {
-                plans.map(plan => <Plan key={plan.title} plan={plan}></Plan>)
+                plans.map(plan => <Plan key={plan.id} plan={plan}></Plan>)
             }
         </div>
     );

@@ -1,13 +1,14 @@
 import initializeAuthentication from "../Firebase/firebase.init"
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 initializeAuthentication();
 
 const useFirebase = () => {
 
     const [user, setUser] = useState([]);
-
+    const [error, setError] = useState('');
     const auth = getAuth();
 
     const googleSignIn = () => {
@@ -26,11 +27,10 @@ const useFirebase = () => {
             const getUser = result.user;
             getUser.displayName = name;
             setUser(getUser);
-            console.log(name, getUser)
+            console.log(getUser)
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            setError(error.message);
         });
     }
 
@@ -54,6 +54,9 @@ const useFirebase = () => {
 
     return {
         user,
+        error,
+        setError,
+        setUser,
         googleSignIn,
         githubSignIn,
         emailSignIn,

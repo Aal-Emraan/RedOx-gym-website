@@ -5,16 +5,27 @@ import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 
 const SignUp = () => {
-    const {emailSignIn, googleSignIn, githubSignIn} = useAuth();
+    const {emailSignIn, googleSignIn, githubSignIn, error} = useAuth();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+    const [ggError, setError] = useState('');
 
     const location = useLocation();
     const history = useHistory();
 
     const redirect_url = location.state?.from || '/home';
+
+    // const handleEmailSignIn = (email, password, name) => {
+    //     emailSignIn(email, password, name)
+    //     .then(result => {
+    //         result.user && history.push('/home');
+    //     })
+    //     .catch((error) => {
+    //         setError(error.message);
+    //     });
+    // }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -22,8 +33,7 @@ const SignUp = () => {
             history.push(redirect_url)
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            setError(error.message);
         });
         
     }
@@ -34,14 +44,12 @@ const SignUp = () => {
             history.push(redirect_url)
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            setError(error.message);
         });
     }
 
     const handleName = e => {
         setName(e.target.value);
-        console.log(e.target.value)
     }
 
     const handleEmail = e => {
@@ -54,6 +62,7 @@ const SignUp = () => {
 
     const handleReload = e => {
         e.preventDefault();
+        error && console.log(error);
     }
 
     return (
@@ -64,7 +73,7 @@ const SignUp = () => {
                 <input type="email" placeholder="Email..." className="form-control bg-light shadow-sm p-3 mb-4 border-0" onBlur={handleEmail} />
                 <input type="password" placeholder="Password..." className="form-control bg-light shadow-sm p-3 mb-4 border-0" />
                 <input type="password" placeholder="Re-enter your password..." className="form-control bg-light shadow-sm p-3 mb-5 border-0" onBlur={handlePassword} />
-                <input type="submit" className="btn btn-danger d-block w-100 py-3 rounded-pill" value="Sign Up" onClick={emailSignIn(email, password, name)}/>
+                <input type="submit" className="btn btn-danger d-block w-100 py-3 rounded-pill" value="Sign Up" onClick={emailSignIn(email,password,name)}/>
                 <p className="mt-4 fst-italic">Already have an account? <Link to="/login"> Login</Link></p>
                 <p className="text-muted">-------------- or --------------</p>
                 <button className="btn btn-success" onClick={handleGoogleSignIn}>Google Sign In</button>

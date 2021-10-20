@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
+import { useState } from 'react/cjs/react.development';
 
 
 const Login = () => {
 
-    const {googleSignIn, githubSignIn} = useAuth();
+    const {error , setError, googleSignIn, githubSignIn} = useAuth();
+    // const [error, setError] = useState('');
+    console.log(error)
 
     const location = useLocation();
     const history = useHistory();
@@ -19,8 +22,7 @@ const Login = () => {
             history.push(redirect_url)
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            setError(error.message);
         });
         
     }
@@ -31,8 +33,7 @@ const Login = () => {
             history.push(redirect_url)
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            setError(error.message);
         });
     }
 
