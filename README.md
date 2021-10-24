@@ -1,6 +1,6 @@
 # RedOx Gymnesiam for your perfect body.
 
-Visit this website to know more (https://healthcare-website-70c582.netlify.app/).
+Visit this website to know more (https://redox-gym.web.app).
 
 ## Here you will find...
 
